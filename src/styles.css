@@ -157,3 +157,42 @@
     color: var(--color-foreground);
   }
 }
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+/* Section heading used across marketing pages: purple title over a thin rule. */
+@utility section-title {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Page banner strip that sits directly under the header on inner pages. */
+@utility page-banner {
+  background-color: var(--surface-tint);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Body copy blocks: justified, generous leading, matching the reference. */
+@utility rich-text {
+  color: var(--foreground);
+  line-height: 1.85;
+
+  & p + p {
+    margin-top: 1rem;
+  }
+}

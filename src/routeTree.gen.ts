@@ -10,33 +10,62 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as SoftwareRouteImport } from './routes/software'
+import { Route as SoftwareSlugRouteImport } from './routes/software.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoftwareRoute = SoftwareRouteImport.update({
+  id: '/software',
+  path: '/software',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoftwareSlugRoute = SoftwareSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => SoftwareRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/software': typeof SoftwareRouteWithChildren
+  '/software/$slug': typeof SoftwareSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/software': typeof SoftwareRouteWithChildren
+  '/software/$slug': typeof SoftwareSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/software': typeof SoftwareRouteWithChildren
+  '/software/$slug': typeof SoftwareSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/about' | '/software' | '/software/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/about' | '/software' | '/software/$slug'
+  id: '__root__' | '/' | '/about' | '/software' | '/software/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  SoftwareRoute: typeof SoftwareRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +77,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/software': {
+      id: '/software'
+      path: '/software'
+      fullPath: '/software'
+      preLoaderRoute: typeof SoftwareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/software/$slug': {
+      id: '/software/$slug'
+      path: '/$slug'
+      fullPath: '/software/$slug'
+      preLoaderRoute: typeof SoftwareSlugRouteImport
+      parentRoute: typeof SoftwareRoute
+    }
   }
 }
 
+interface SoftwareRouteChildren {
+  SoftwareSlugRoute: typeof SoftwareSlugRoute
+}
+
+const SoftwareRouteChildren: SoftwareRouteChildren = {
+  SoftwareSlugRoute: SoftwareSlugRoute,
+}
+
+const SoftwareRouteWithChildren = SoftwareRoute._addFileChildren(
+  SoftwareRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  SoftwareRoute: SoftwareRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

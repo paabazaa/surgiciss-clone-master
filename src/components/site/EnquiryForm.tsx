@@ -161,7 +161,15 @@ export function EnquiryForm({
   );
 }
 
-function Label({ htmlFor, required, children }: { htmlFor: string; required?: boolean; children: React.ReactNode }) {
+function Label({
+  htmlFor,
+  required,
+  children,
+}: {
+  htmlFor: string;
+  required?: boolean | undefined;
+  children: React.ReactNode;
+}) {
   return (
     <label htmlFor={htmlFor} className="text-sm font-medium text-foreground">
       {children}
@@ -170,7 +178,7 @@ function Label({ htmlFor, required, children }: { htmlFor: string; required?: bo
   );
 }
 
-function FieldError({ message }: { message?: string }) {
+function FieldError({ message }: { message?: string | undefined }) {
   if (!message) return null;
   return <p className="mt-1.5 text-xs text-destructive">{message}</p>;
 }
@@ -186,9 +194,9 @@ function Field({
   label: string;
   name: string;
   type?: string;
-  error?: string;
-  required?: boolean;
-  placeholder?: string;
+  error?: string | undefined;
+  required?: boolean | undefined;
+  placeholder?: string | undefined;
 }) {
   return (
     <div>

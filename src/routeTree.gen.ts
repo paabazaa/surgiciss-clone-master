@@ -11,7 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as ProgrammesRouteImport } from './routes/programmes'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SoftwareRouteImport } from './routes/software'
+import { Route as ProductCategorySlugRouteImport } from './routes/product-category.$slug'
+import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
+import { Route as ProgrammesSlugRouteImport } from './routes/programmes.$slug'
+import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as SoftwareSlugRouteImport } from './routes/software.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -24,10 +31,45 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgrammesRoute = ProgrammesRouteImport.update({
+  id: '/programmes',
+  path: '/programmes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SoftwareRoute = SoftwareRouteImport.update({
   id: '/software',
   path: '/software',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ProductCategorySlugRoute = ProductCategorySlugRouteImport.update({
+  id: '/product-category/$slug',
+  path: '/product-category/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsSlugRoute = ProductsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProgrammesSlugRoute = ProgrammesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ProgrammesRoute,
+} as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ServicesRoute,
 } as any)
 const SoftwareSlugRoute = SoftwareSlugRouteImport.update({
   id: '/$slug',
@@ -38,34 +80,93 @@ const SoftwareSlugRoute = SoftwareSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/products': typeof ProductsRouteWithChildren
+  '/programmes': typeof ProgrammesRouteWithChildren
+  '/services': typeof ServicesRouteWithChildren
   '/software': typeof SoftwareRouteWithChildren
+  '/product-category/$slug': typeof ProductCategorySlugRoute
+  '/products/$slug': typeof ProductsSlugRoute
+  '/programmes/$slug': typeof ProgrammesSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/software/$slug': typeof SoftwareSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/products': typeof ProductsRouteWithChildren
+  '/programmes': typeof ProgrammesRouteWithChildren
+  '/services': typeof ServicesRouteWithChildren
   '/software': typeof SoftwareRouteWithChildren
+  '/product-category/$slug': typeof ProductCategorySlugRoute
+  '/products/$slug': typeof ProductsSlugRoute
+  '/programmes/$slug': typeof ProgrammesSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/software/$slug': typeof SoftwareSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/products': typeof ProductsRouteWithChildren
+  '/programmes': typeof ProgrammesRouteWithChildren
+  '/services': typeof ServicesRouteWithChildren
   '/software': typeof SoftwareRouteWithChildren
+  '/product-category/$slug': typeof ProductCategorySlugRoute
+  '/products/$slug': typeof ProductsSlugRoute
+  '/programmes/$slug': typeof ProgrammesSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/software/$slug': typeof SoftwareSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/software' | '/software/$slug'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/products'
+    | '/programmes'
+    | '/services'
+    | '/software'
+    | '/product-category/$slug'
+    | '/products/$slug'
+    | '/programmes/$slug'
+    | '/services/$slug'
+    | '/software/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/software' | '/software/$slug'
-  id: '__root__' | '/' | '/about' | '/software' | '/software/$slug'
+  to:
+    | '/'
+    | '/about'
+    | '/products'
+    | '/programmes'
+    | '/services'
+    | '/software'
+    | '/product-category/$slug'
+    | '/products/$slug'
+    | '/programmes/$slug'
+    | '/services/$slug'
+    | '/software/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/products'
+    | '/programmes'
+    | '/services'
+    | '/software'
+    | '/product-category/$slug'
+    | '/products/$slug'
+    | '/programmes/$slug'
+    | '/services/$slug'
+    | '/software/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ProductsRoute: typeof ProductsRouteWithChildren
+  ProgrammesRoute: typeof ProgrammesRouteWithChildren
+  ServicesRoute: typeof ServicesRouteWithChildren
   SoftwareRoute: typeof SoftwareRouteWithChildren
+  ProductCategorySlugRoute: typeof ProductCategorySlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -84,12 +185,61 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes': {
+      id: '/programmes'
+      path: '/programmes'
+      fullPath: '/programmes'
+      preLoaderRoute: typeof ProgrammesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/software': {
       id: '/software'
       path: '/software'
       fullPath: '/software'
       preLoaderRoute: typeof SoftwareRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/product-category/$slug': {
+      id: '/product-category/$slug'
+      path: '/product-category/$slug'
+      fullPath: '/product-category/$slug'
+      preLoaderRoute: typeof ProductCategorySlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/$slug': {
+      id: '/products/$slug'
+      path: '/$slug'
+      fullPath: '/products/$slug'
+      preLoaderRoute: typeof ProductsSlugRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/programmes/$slug': {
+      id: '/programmes/$slug'
+      path: '/$slug'
+      fullPath: '/programmes/$slug'
+      preLoaderRoute: typeof ProgrammesSlugRouteImport
+      parentRoute: typeof ProgrammesRoute
+    }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/software/$slug': {
       id: '/software/$slug'
@@ -100,6 +250,42 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface ProductsRouteChildren {
+  ProductsSlugRoute: typeof ProductsSlugRoute
+}
+
+const ProductsRouteChildren: ProductsRouteChildren = {
+  ProductsSlugRoute: ProductsSlugRoute,
+}
+
+const ProductsRouteWithChildren = ProductsRoute._addFileChildren(
+  ProductsRouteChildren,
+)
+
+interface ProgrammesRouteChildren {
+  ProgrammesSlugRoute: typeof ProgrammesSlugRoute
+}
+
+const ProgrammesRouteChildren: ProgrammesRouteChildren = {
+  ProgrammesSlugRoute: ProgrammesSlugRoute,
+}
+
+const ProgrammesRouteWithChildren = ProgrammesRoute._addFileChildren(
+  ProgrammesRouteChildren,
+)
+
+interface ServicesRouteChildren {
+  ServicesSlugRoute: typeof ServicesSlugRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesSlugRoute: ServicesSlugRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
 
 interface SoftwareRouteChildren {
   SoftwareSlugRoute: typeof SoftwareSlugRoute
@@ -116,7 +302,11 @@ const SoftwareRouteWithChildren = SoftwareRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ProductsRoute: ProductsRouteWithChildren,
+  ProgrammesRoute: ProgrammesRouteWithChildren,
+  ServicesRoute: ServicesRouteWithChildren,
   SoftwareRoute: SoftwareRouteWithChildren,
+  ProductCategorySlugRoute: ProductCategorySlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -11,10 +11,18 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactUsRouteImport } from './routes/contact-us'
+import { Route as CountSheetHoldersRouteImport } from './routes/count-sheet-holders'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as ProgrammesRouteImport } from './routes/programmes'
+import { Route as RequestQuoteRouteImport } from './routes/request-quote'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as SearchRouteImport } from './routes/search'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SoftwareRouteImport } from './routes/software'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ProductCategorySlugRouteImport } from './routes/product-category.$slug'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 import { Route as ProgrammesSlugRouteImport } from './routes/programmes.$slug'
@@ -31,6 +39,26 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactUsRoute = ContactUsRouteImport.update({
+  id: '/contact-us',
+  path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CountSheetHoldersRoute = CountSheetHoldersRouteImport.update({
+  id: '/count-sheet-holders',
+  path: '/count-sheet-holders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
   path: '/products',
@@ -41,6 +69,21 @@ const ProgrammesRoute = ProgrammesRouteImport.update({
   path: '/programmes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RequestQuoteRoute = RequestQuoteRouteImport.update({
+  id: '/request-quote',
+  path: '/request-quote',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -49,6 +92,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const SoftwareRoute = SoftwareRouteImport.update({
   id: '/software',
   path: '/software',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductCategorySlugRoute = ProductCategorySlugRouteImport.update({
@@ -80,10 +128,18 @@ const SoftwareSlugRoute = SoftwareSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact-us': typeof ContactUsRoute
+  '/count-sheet-holders': typeof CountSheetHoldersRoute
+  '/faq': typeof FaqRoute
+  '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRouteWithChildren
   '/programmes': typeof ProgrammesRouteWithChildren
+  '/request-quote': typeof RequestQuoteRoute
+  '/resources': typeof ResourcesRoute
+  '/search': typeof SearchRoute
   '/services': typeof ServicesRouteWithChildren
   '/software': typeof SoftwareRouteWithChildren
+  '/terms': typeof TermsRoute
   '/product-category/$slug': typeof ProductCategorySlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/programmes/$slug': typeof ProgrammesSlugRoute
@@ -93,10 +149,18 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact-us': typeof ContactUsRoute
+  '/count-sheet-holders': typeof CountSheetHoldersRoute
+  '/faq': typeof FaqRoute
+  '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRouteWithChildren
   '/programmes': typeof ProgrammesRouteWithChildren
+  '/request-quote': typeof RequestQuoteRoute
+  '/resources': typeof ResourcesRoute
+  '/search': typeof SearchRoute
   '/services': typeof ServicesRouteWithChildren
   '/software': typeof SoftwareRouteWithChildren
+  '/terms': typeof TermsRoute
   '/product-category/$slug': typeof ProductCategorySlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/programmes/$slug': typeof ProgrammesSlugRoute
@@ -107,10 +171,18 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact-us': typeof ContactUsRoute
+  '/count-sheet-holders': typeof CountSheetHoldersRoute
+  '/faq': typeof FaqRoute
+  '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRouteWithChildren
   '/programmes': typeof ProgrammesRouteWithChildren
+  '/request-quote': typeof RequestQuoteRoute
+  '/resources': typeof ResourcesRoute
+  '/search': typeof SearchRoute
   '/services': typeof ServicesRouteWithChildren
   '/software': typeof SoftwareRouteWithChildren
+  '/terms': typeof TermsRoute
   '/product-category/$slug': typeof ProductCategorySlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/programmes/$slug': typeof ProgrammesSlugRoute
@@ -122,10 +194,18 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/contact-us'
+    | '/count-sheet-holders'
+    | '/faq'
+    | '/privacy'
     | '/products'
     | '/programmes'
+    | '/request-quote'
+    | '/resources'
+    | '/search'
     | '/services'
     | '/software'
+    | '/terms'
     | '/product-category/$slug'
     | '/products/$slug'
     | '/programmes/$slug'
@@ -135,10 +215,18 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/contact-us'
+    | '/count-sheet-holders'
+    | '/faq'
+    | '/privacy'
     | '/products'
     | '/programmes'
+    | '/request-quote'
+    | '/resources'
+    | '/search'
     | '/services'
     | '/software'
+    | '/terms'
     | '/product-category/$slug'
     | '/products/$slug'
     | '/programmes/$slug'
@@ -148,10 +236,18 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/contact-us'
+    | '/count-sheet-holders'
+    | '/faq'
+    | '/privacy'
     | '/products'
     | '/programmes'
+    | '/request-quote'
+    | '/resources'
+    | '/search'
     | '/services'
     | '/software'
+    | '/terms'
     | '/product-category/$slug'
     | '/products/$slug'
     | '/programmes/$slug'
@@ -162,10 +258,18 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ContactUsRoute: typeof ContactUsRoute
+  CountSheetHoldersRoute: typeof CountSheetHoldersRoute
+  FaqRoute: typeof FaqRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProductsRoute: typeof ProductsRouteWithChildren
   ProgrammesRoute: typeof ProgrammesRouteWithChildren
+  RequestQuoteRoute: typeof RequestQuoteRoute
+  ResourcesRoute: typeof ResourcesRoute
+  SearchRoute: typeof SearchRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SoftwareRoute: typeof SoftwareRouteWithChildren
+  TermsRoute: typeof TermsRoute
   ProductCategorySlugRoute: typeof ProductCategorySlugRoute
 }
 
@@ -185,6 +289,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact-us': {
+      id: '/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/count-sheet-holders': {
+      id: '/count-sheet-holders'
+      path: '/count-sheet-holders'
+      fullPath: '/count-sheet-holders'
+      preLoaderRoute: typeof CountSheetHoldersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products': {
       id: '/products'
       path: '/products'
@@ -199,6 +331,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgrammesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/request-quote': {
+      id: '/request-quote'
+      path: '/request-quote'
+      fullPath: '/request-quote'
+      preLoaderRoute: typeof RequestQuoteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -211,6 +364,13 @@ declare module '@tanstack/react-router' {
       path: '/software'
       fullPath: '/software'
       preLoaderRoute: typeof SoftwareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/product-category/$slug': {
@@ -302,10 +462,18 @@ const SoftwareRouteWithChildren = SoftwareRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ContactUsRoute: ContactUsRoute,
+  CountSheetHoldersRoute: CountSheetHoldersRoute,
+  FaqRoute: FaqRoute,
+  PrivacyRoute: PrivacyRoute,
   ProductsRoute: ProductsRouteWithChildren,
   ProgrammesRoute: ProgrammesRouteWithChildren,
+  RequestQuoteRoute: RequestQuoteRoute,
+  ResourcesRoute: ResourcesRoute,
+  SearchRoute: SearchRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SoftwareRoute: SoftwareRouteWithChildren,
+  TermsRoute: TermsRoute,
   ProductCategorySlugRoute: ProductCategorySlugRoute,
 }
 export const routeTree = rootRouteImport

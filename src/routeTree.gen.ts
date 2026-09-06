@@ -15,18 +15,18 @@ import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as CountSheetHoldersRouteImport } from './routes/count-sheet-holders'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as ProductsRouteImport } from './routes/products'
-import { Route as ProgrammesRouteImport } from './routes/programmes'
 import { Route as RequestQuoteRouteImport } from './routes/request-quote'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as SearchRouteImport } from './routes/search'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as SoftwareRouteImport } from './routes/software'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ProductCategorySlugRouteImport } from './routes/product-category.$slug'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
+import { Route as ProgrammesIndexRouteImport } from './routes/programmes.index'
 import { Route as ProgrammesSlugRouteImport } from './routes/programmes.$slug'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as SoftwareIndexRouteImport } from './routes/software.index'
 import { Route as SoftwareSlugRouteImport } from './routes/software.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,16 +59,6 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProductsRoute = ProductsRouteImport.update({
-  id: '/products',
-  path: '/products',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProgrammesRoute = ProgrammesRouteImport.update({
-  id: '/programmes',
-  path: '/programmes',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const RequestQuoteRoute = RequestQuoteRouteImport.update({
   id: '/request-quote',
   path: '/request-quote',
@@ -84,16 +74,6 @@ const SearchRoute = SearchRouteImport.update({
   path: '/search',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SoftwareRoute = SoftwareRouteImport.update({
-  id: '/software',
-  path: '/software',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -104,25 +84,45 @@ const ProductCategorySlugRoute = ProductCategorySlugRouteImport.update({
   path: '/product-category/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/products/',
+  path: '/products/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsSlugRoute = ProductsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ProductsRoute,
+  id: '/products/$slug',
+  path: '/products/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgrammesIndexRoute = ProgrammesIndexRouteImport.update({
+  id: '/programmes/',
+  path: '/programmes/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ProgrammesSlugRoute = ProgrammesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ProgrammesRoute,
+  id: '/programmes/$slug',
+  path: '/programmes/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoftwareIndexRoute = SoftwareIndexRouteImport.update({
+  id: '/software/',
+  path: '/software/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const SoftwareSlugRoute = SoftwareSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => SoftwareRoute,
+  id: '/software/$slug',
+  path: '/software/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -132,19 +132,19 @@ export interface FileRoutesByFullPath {
   '/count-sheet-holders': typeof CountSheetHoldersRoute
   '/faq': typeof FaqRoute
   '/privacy': typeof PrivacyRoute
-  '/products': typeof ProductsRouteWithChildren
-  '/programmes': typeof ProgrammesRouteWithChildren
   '/request-quote': typeof RequestQuoteRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
-  '/services': typeof ServicesRouteWithChildren
-  '/software': typeof SoftwareRouteWithChildren
   '/terms': typeof TermsRoute
   '/product-category/$slug': typeof ProductCategorySlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/programmes/$slug': typeof ProgrammesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/software/$slug': typeof SoftwareSlugRoute
+  '/products/': typeof ProductsIndexRoute
+  '/programmes/': typeof ProgrammesIndexRoute
+  '/services/': typeof ServicesIndexRoute
+  '/software/': typeof SoftwareIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -153,19 +153,19 @@ export interface FileRoutesByTo {
   '/count-sheet-holders': typeof CountSheetHoldersRoute
   '/faq': typeof FaqRoute
   '/privacy': typeof PrivacyRoute
-  '/products': typeof ProductsRouteWithChildren
-  '/programmes': typeof ProgrammesRouteWithChildren
   '/request-quote': typeof RequestQuoteRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
-  '/services': typeof ServicesRouteWithChildren
-  '/software': typeof SoftwareRouteWithChildren
   '/terms': typeof TermsRoute
   '/product-category/$slug': typeof ProductCategorySlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/programmes/$slug': typeof ProgrammesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/software/$slug': typeof SoftwareSlugRoute
+  '/products': typeof ProductsIndexRoute
+  '/programmes': typeof ProgrammesIndexRoute
+  '/services': typeof ServicesIndexRoute
+  '/software': typeof SoftwareIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -175,19 +175,19 @@ export interface FileRoutesById {
   '/count-sheet-holders': typeof CountSheetHoldersRoute
   '/faq': typeof FaqRoute
   '/privacy': typeof PrivacyRoute
-  '/products': typeof ProductsRouteWithChildren
-  '/programmes': typeof ProgrammesRouteWithChildren
   '/request-quote': typeof RequestQuoteRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
-  '/services': typeof ServicesRouteWithChildren
-  '/software': typeof SoftwareRouteWithChildren
   '/terms': typeof TermsRoute
   '/product-category/$slug': typeof ProductCategorySlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/programmes/$slug': typeof ProgrammesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/software/$slug': typeof SoftwareSlugRoute
+  '/products/': typeof ProductsIndexRoute
+  '/programmes/': typeof ProgrammesIndexRoute
+  '/services/': typeof ServicesIndexRoute
+  '/software/': typeof SoftwareIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -198,19 +198,19 @@ export interface FileRouteTypes {
     | '/count-sheet-holders'
     | '/faq'
     | '/privacy'
-    | '/products'
-    | '/programmes'
     | '/request-quote'
     | '/resources'
     | '/search'
-    | '/services'
-    | '/software'
     | '/terms'
     | '/product-category/$slug'
     | '/products/$slug'
     | '/programmes/$slug'
     | '/services/$slug'
     | '/software/$slug'
+    | '/products/'
+    | '/programmes/'
+    | '/services/'
+    | '/software/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -219,19 +219,19 @@ export interface FileRouteTypes {
     | '/count-sheet-holders'
     | '/faq'
     | '/privacy'
-    | '/products'
-    | '/programmes'
     | '/request-quote'
     | '/resources'
     | '/search'
-    | '/services'
-    | '/software'
     | '/terms'
     | '/product-category/$slug'
     | '/products/$slug'
     | '/programmes/$slug'
     | '/services/$slug'
     | '/software/$slug'
+    | '/products'
+    | '/programmes'
+    | '/services'
+    | '/software'
   id:
     | '__root__'
     | '/'
@@ -240,19 +240,19 @@ export interface FileRouteTypes {
     | '/count-sheet-holders'
     | '/faq'
     | '/privacy'
-    | '/products'
-    | '/programmes'
     | '/request-quote'
     | '/resources'
     | '/search'
-    | '/services'
-    | '/software'
     | '/terms'
     | '/product-category/$slug'
     | '/products/$slug'
     | '/programmes/$slug'
     | '/services/$slug'
     | '/software/$slug'
+    | '/products/'
+    | '/programmes/'
+    | '/services/'
+    | '/software/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -262,15 +262,19 @@ export interface RootRouteChildren {
   CountSheetHoldersRoute: typeof CountSheetHoldersRoute
   FaqRoute: typeof FaqRoute
   PrivacyRoute: typeof PrivacyRoute
-  ProductsRoute: typeof ProductsRouteWithChildren
-  ProgrammesRoute: typeof ProgrammesRouteWithChildren
   RequestQuoteRoute: typeof RequestQuoteRoute
   ResourcesRoute: typeof ResourcesRoute
   SearchRoute: typeof SearchRoute
-  ServicesRoute: typeof ServicesRouteWithChildren
-  SoftwareRoute: typeof SoftwareRouteWithChildren
   TermsRoute: typeof TermsRoute
   ProductCategorySlugRoute: typeof ProductCategorySlugRoute
+  ProductsSlugRoute: typeof ProductsSlugRoute
+  ProgrammesSlugRoute: typeof ProgrammesSlugRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
+  SoftwareSlugRoute: typeof SoftwareSlugRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
+  ProgrammesIndexRoute: typeof ProgrammesIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
+  SoftwareIndexRoute: typeof SoftwareIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -317,20 +321,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/products': {
-      id: '/products'
-      path: '/products'
-      fullPath: '/products'
-      preLoaderRoute: typeof ProductsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/programmes': {
-      id: '/programmes'
-      path: '/programmes'
-      fullPath: '/programmes'
-      preLoaderRoute: typeof ProgrammesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/request-quote': {
       id: '/request-quote'
       path: '/request-quote'
@@ -352,20 +342,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/software': {
-      id: '/software'
-      path: '/software'
-      fullPath: '/software'
-      preLoaderRoute: typeof SoftwareRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -380,84 +356,64 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductCategorySlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/': {
+      id: '/products/'
+      path: '/products'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/$slug': {
       id: '/products/$slug'
-      path: '/$slug'
+      path: '/products/$slug'
       fullPath: '/products/$slug'
       preLoaderRoute: typeof ProductsSlugRouteImport
-      parentRoute: typeof ProductsRoute
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes/': {
+      id: '/programmes/'
+      path: '/programmes'
+      fullPath: '/programmes/'
+      preLoaderRoute: typeof ProgrammesIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/programmes/$slug': {
       id: '/programmes/$slug'
-      path: '/$slug'
+      path: '/programmes/$slug'
       fullPath: '/programmes/$slug'
       preLoaderRoute: typeof ProgrammesSlugRouteImport
-      parentRoute: typeof ProgrammesRoute
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/services/$slug': {
       id: '/services/$slug'
-      path: '/$slug'
+      path: '/services/$slug'
       fullPath: '/services/$slug'
       preLoaderRoute: typeof ServicesSlugRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
+    }
+    '/software/': {
+      id: '/software/'
+      path: '/software'
+      fullPath: '/software/'
+      preLoaderRoute: typeof SoftwareIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/software/$slug': {
       id: '/software/$slug'
-      path: '/$slug'
+      path: '/software/$slug'
       fullPath: '/software/$slug'
       preLoaderRoute: typeof SoftwareSlugRouteImport
-      parentRoute: typeof SoftwareRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
-
-interface ProductsRouteChildren {
-  ProductsSlugRoute: typeof ProductsSlugRoute
-}
-
-const ProductsRouteChildren: ProductsRouteChildren = {
-  ProductsSlugRoute: ProductsSlugRoute,
-}
-
-const ProductsRouteWithChildren = ProductsRoute._addFileChildren(
-  ProductsRouteChildren,
-)
-
-interface ProgrammesRouteChildren {
-  ProgrammesSlugRoute: typeof ProgrammesSlugRoute
-}
-
-const ProgrammesRouteChildren: ProgrammesRouteChildren = {
-  ProgrammesSlugRoute: ProgrammesSlugRoute,
-}
-
-const ProgrammesRouteWithChildren = ProgrammesRoute._addFileChildren(
-  ProgrammesRouteChildren,
-)
-
-interface ServicesRouteChildren {
-  ServicesSlugRoute: typeof ServicesSlugRoute
-}
-
-const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesSlugRoute: ServicesSlugRoute,
-}
-
-const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
-  ServicesRouteChildren,
-)
-
-interface SoftwareRouteChildren {
-  SoftwareSlugRoute: typeof SoftwareSlugRoute
-}
-
-const SoftwareRouteChildren: SoftwareRouteChildren = {
-  SoftwareSlugRoute: SoftwareSlugRoute,
-}
-
-const SoftwareRouteWithChildren = SoftwareRoute._addFileChildren(
-  SoftwareRouteChildren,
-)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -466,15 +422,19 @@ const rootRouteChildren: RootRouteChildren = {
   CountSheetHoldersRoute: CountSheetHoldersRoute,
   FaqRoute: FaqRoute,
   PrivacyRoute: PrivacyRoute,
-  ProductsRoute: ProductsRouteWithChildren,
-  ProgrammesRoute: ProgrammesRouteWithChildren,
   RequestQuoteRoute: RequestQuoteRoute,
   ResourcesRoute: ResourcesRoute,
   SearchRoute: SearchRoute,
-  ServicesRoute: ServicesRouteWithChildren,
-  SoftwareRoute: SoftwareRouteWithChildren,
   TermsRoute: TermsRoute,
   ProductCategorySlugRoute: ProductCategorySlugRoute,
+  ProductsSlugRoute: ProductsSlugRoute,
+  ProgrammesSlugRoute: ProgrammesSlugRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
+  SoftwareSlugRoute: SoftwareSlugRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
+  ProgrammesIndexRoute: ProgrammesIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
+  SoftwareIndexRoute: SoftwareIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

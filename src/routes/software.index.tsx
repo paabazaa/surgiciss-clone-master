@@ -3,7 +3,7 @@ import { PageBanner } from "@/components/site/PageBanner";
 import { CtaBand, SoftwareCard } from "@/components/site/Cards";
 import { software, softwareDashboard } from "@/data/catalogue";
 
-export const Route = createFileRoute("/software")({
+export const Route = createFileRoute("/software/")({
   head: () => ({
     meta: [
       { title: "Sterile services software — SURGICISS LTD" },

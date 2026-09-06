@@ -99,7 +99,7 @@ function HomePage() {
       </section>
 
       <section className="bg-surface-tint" aria-label="Software shortcuts">
-        <div className="mx-auto -mt-6 grid max-w-[1200px] gap-4 px-4 pb-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-[1200px] gap-4 px-4 py-8 sm:grid-cols-2 lg:grid-cols-4">
           {software.map((item) => (
             <Link
               key={item.slug}

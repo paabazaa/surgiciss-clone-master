@@ -90,9 +90,9 @@ const ProductsIndexRoute = ProductsIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductsSlugRoute = ProductsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ProductsRoute,
+  id: '/products/$slug',
+  path: '/products/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ProgrammesIndexRoute = ProgrammesIndexRouteImport.update({
   id: '/programmes/',
@@ -100,9 +100,9 @@ const ProgrammesIndexRoute = ProgrammesIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProgrammesSlugRoute = ProgrammesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ProgrammesRoute,
+  id: '/programmes/$slug',
+  path: '/programmes/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
@@ -110,9 +110,9 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const SoftwareIndexRoute = SoftwareIndexRouteImport.update({
   id: '/software/',
@@ -120,9 +120,9 @@ const SoftwareIndexRoute = SoftwareIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const SoftwareSlugRoute = SoftwareSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => SoftwareRoute,
+  id: '/software/$slug',
+  path: '/software/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -267,6 +267,10 @@ export interface RootRouteChildren {
   SearchRoute: typeof SearchRoute
   TermsRoute: typeof TermsRoute
   ProductCategorySlugRoute: typeof ProductCategorySlugRoute
+  ProductsSlugRoute: typeof ProductsSlugRoute
+  ProgrammesSlugRoute: typeof ProgrammesSlugRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
+  SoftwareSlugRoute: typeof SoftwareSlugRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
   ProgrammesIndexRoute: typeof ProgrammesIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
@@ -361,10 +365,10 @@ declare module '@tanstack/react-router' {
     }
     '/products/$slug': {
       id: '/products/$slug'
-      path: '/$slug'
+      path: '/products/$slug'
       fullPath: '/products/$slug'
       preLoaderRoute: typeof ProductsSlugRouteImport
-      parentRoute: typeof ProductsRoute
+      parentRoute: typeof rootRouteImport
     }
     '/programmes/': {
       id: '/programmes/'
@@ -375,10 +379,10 @@ declare module '@tanstack/react-router' {
     }
     '/programmes/$slug': {
       id: '/programmes/$slug'
-      path: '/$slug'
+      path: '/programmes/$slug'
       fullPath: '/programmes/$slug'
       preLoaderRoute: typeof ProgrammesSlugRouteImport
-      parentRoute: typeof ProgrammesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/': {
       id: '/services/'
@@ -389,10 +393,10 @@ declare module '@tanstack/react-router' {
     }
     '/services/$slug': {
       id: '/services/$slug'
-      path: '/$slug'
+      path: '/services/$slug'
       fullPath: '/services/$slug'
       preLoaderRoute: typeof ServicesSlugRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/software/': {
       id: '/software/'
@@ -403,10 +407,10 @@ declare module '@tanstack/react-router' {
     }
     '/software/$slug': {
       id: '/software/$slug'
-      path: '/$slug'
+      path: '/software/$slug'
       fullPath: '/software/$slug'
       preLoaderRoute: typeof SoftwareSlugRouteImport
-      parentRoute: typeof SoftwareRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -423,6 +427,10 @@ const rootRouteChildren: RootRouteChildren = {
   SearchRoute: SearchRoute,
   TermsRoute: TermsRoute,
   ProductCategorySlugRoute: ProductCategorySlugRoute,
+  ProductsSlugRoute: ProductsSlugRoute,
+  ProgrammesSlugRoute: ProgrammesSlugRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
+  SoftwareSlugRoute: SoftwareSlugRoute,
   ProductsIndexRoute: ProductsIndexRoute,
   ProgrammesIndexRoute: ProgrammesIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,

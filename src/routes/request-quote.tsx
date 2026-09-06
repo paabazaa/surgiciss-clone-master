@@ -4,9 +4,8 @@ import { EnquiryForm } from "@/components/site/EnquiryForm";
 import { company } from "@/data/company";
 
 export const Route = createFileRoute("/request-quote")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    item: typeof search.item === "string" ? search.item : "",
-  }),
+  validateSearch: (search: Record<string, unknown>): { item?: string } =>
+    typeof search["item"] === "string" ? { item: search["item"] } : {},
   head: () => ({
     meta: [
       { title: "Request a quote — SURGICISS LTD" },
@@ -29,6 +28,7 @@ export const Route = createFileRoute("/request-quote")({
 
 function RequestQuotePage() {
   const { item } = Route.useSearch();
+  const interest = item ?? "";
 
   return (
     <>
@@ -46,7 +46,7 @@ function RequestQuotePage() {
                 Enquiry about: <strong>{item}</strong>
               </p>
             )}
-            <EnquiryForm variant="quote" defaultInterest={item} />
+            <EnquiryForm variant="quote" defaultInterest={interest} />
           </div>
 
           <aside className="space-y-6 text-sm">

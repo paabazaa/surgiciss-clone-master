@@ -3,7 +3,7 @@ import { PageBanner } from "@/components/site/PageBanner";
 import { CtaBand, ServiceCard } from "@/components/site/Cards";
 import { services } from "@/data/catalogue";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Services — sterile processing management, morale and training" },

@@ -3,7 +3,7 @@ import { PageBanner } from "@/components/site/PageBanner";
 import { CtaBand, ProductCard } from "@/components/site/Cards";
 import { productCategories, products } from "@/data/catalogue";
 
-export const Route = createFileRoute("/products")({
+export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
       { title: "Products — SURGICISS LTD sterile barrier and instrument products" },

@@ -3,7 +3,7 @@ import { PageBanner } from "@/components/site/PageBanner";
 import { CtaBand, ProgrammeCard } from "@/components/site/Cards";
 import { programmes } from "@/data/catalogue";
 
-export const Route = createFileRoute("/programmes")({
+export const Route = createFileRoute("/programmes/")({
   head: () => ({
     meta: [
       { title: "Programmes — cost reduction, loaner processing, sterile forensics" },

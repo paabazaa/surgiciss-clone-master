@@ -102,10 +102,10 @@ export const products: Product[] = [
       "Container fleet audits and replacement planning",
     ],
     specifications: [
-      { label: "Product code", value: "[INSERT SURGICISS PRODUCT CODE]" },
-      { label: "Pack quantity", value: "[INSERT PACK QUANTITY]" },
-      { label: "Regulatory classification", value: "[INSERT REGULATORY CLASSIFICATION]" },
-      { label: "Compatible sterilisation methods", value: "[INSERT COMPATIBLE METHODS]" },
+      { label: "Product code", value: "Available on request" },
+      { label: "Pack quantity", value: "Available on request" },
+      { label: "Regulatory classification", value: "Available on request" },
+      { label: "Compatible sterilisation methods", value: "Available on request" },
     ],
   },
   {
@@ -128,10 +128,10 @@ export const products: Product[] = [
     ],
     applications: ["Decontamination", "Set assembly and inspection", "Sterilisation and dispatch"],
     specifications: [
-      { label: "Product code", value: "[INSERT SURGICISS PRODUCT CODE]" },
-      { label: "Material", value: "[INSERT MATERIAL SPECIFICATION]" },
-      { label: "Dimensions", value: "[INSERT DIMENSIONS]" },
-      { label: "Mounting options", value: "[INSERT MOUNTING OPTIONS]" },
+      { label: "Product code", value: "Available on request" },
+      { label: "Material", value: "Available on request" },
+      { label: "Dimensions", value: "Available on request" },
+      { label: "Mounting options", value: "Available on request" },
     ],
   },
   {
@@ -154,10 +154,10 @@ export const products: Product[] = [
     ],
     applications: ["Set assembly", "Instrument tray make-up", "Theatre counts"],
     specifications: [
-      { label: "Product code", value: "[INSERT SURGICISS PRODUCT CODE]" },
-      { label: "Sheet sizes accommodated", value: "[INSERT SHEET SIZES]" },
-      { label: "Regulatory classification", value: "[INSERT REGULATORY CLASSIFICATION]" },
-      { label: "Compatible sterilisation methods", value: "[INSERT COMPATIBLE METHODS]" },
+      { label: "Product code", value: "Available on request" },
+      { label: "Sheet sizes accommodated", value: "Available on request" },
+      { label: "Regulatory classification", value: "Available on request" },
+      { label: "Compatible sterilisation methods", value: "Available on request" },
     ],
   },
   {
@@ -180,10 +180,10 @@ export const products: Product[] = [
     ],
     applications: ["Wrapped instrument trays", "Transport between department and theatre", "Sterile storage"],
     specifications: [
-      { label: "Product code", value: "[INSERT SURGICISS PRODUCT CODE]" },
-      { label: "Sizes available", value: "[INSERT SIZES]" },
-      { label: "Regulatory classification", value: "[INSERT REGULATORY CLASSIFICATION]" },
-      { label: "Compatible sterilisation methods", value: "[INSERT COMPATIBLE METHODS]" },
+      { label: "Product code", value: "Available on request" },
+      { label: "Sizes available", value: "Available on request" },
+      { label: "Regulatory classification", value: "Available on request" },
+      { label: "Compatible sterilisation methods", value: "Available on request" },
     ],
   },
   {
@@ -206,10 +206,10 @@ export const products: Product[] = [
     ],
     applications: ["Wrapped instrument sets", "Sterile stores", "Theatre receipt checks"],
     specifications: [
-      { label: "Product code", value: "[INSERT SURGICISS PRODUCT CODE]" },
-      { label: "Card size", value: "[INSERT CARD SIZE]" },
-      { label: "Pack quantity", value: "[INSERT PACK QUANTITY]" },
-      { label: "Compatible sterilisation methods", value: "[INSERT COMPATIBLE METHODS]" },
+      { label: "Product code", value: "Available on request" },
+      { label: "Card size", value: "Available on request" },
+      { label: "Pack quantity", value: "Available on request" },
+      { label: "Compatible sterilisation methods", value: "Available on request" },
     ],
   },
   {
@@ -225,14 +225,14 @@ export const products: Product[] = [
     features: [
       "Single-use indicator format",
       "Intended for routine, repeated checks",
-      "[INSERT ADDITIONAL PRODUCT FEATURES]",
+      "Available on request",
     ],
-    applications: ["[INSERT INTENDED APPLICATIONS]"],
+    applications: ["Available on request"],
     specifications: [
-      { label: "Product code", value: "[INSERT SURGICISS PRODUCT CODE]" },
-      { label: "Pack quantity", value: "[INSERT PACK QUANTITY]" },
-      { label: "Intended use", value: "[INSERT INTENDED USE]" },
-      { label: "Storage conditions", value: "[INSERT STORAGE CONDITIONS]" },
+      { label: "Product code", value: "Available on request" },
+      { label: "Pack quantity", value: "Available on request" },
+      { label: "Intended use", value: "Available on request" },
+      { label: "Storage conditions", value: "Available on request" },
     ],
   },
 ];

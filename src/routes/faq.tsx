@@ -32,17 +32,17 @@ const faqs = [
   {
     question: "What are your lead times?",
     answer:
-      "Lead times depend on the item and the quantity ordered: [INSERT SURGICISS LEAD TIMES]. We confirm a date in writing with every quotation.",
+      "Lead times depend on the item and the quantity orderedon request. We confirm a date in writing with every quotation.",
   },
   {
     question: "Can we trial a product before committing?",
     answer:
-      "For most physical products we can arrange an evaluation quantity so your technicians can judge it in their own workflow. Terms for evaluations are agreed case by case: [INSERT SURGICISS EVALUATION TERMS].",
+      "For most physical products we can arrange an evaluation quantity so your technicians can judge it in their own workflow. Terms for evaluations are agreed case by caseon request.",
   },
   {
     question: "Is your software hosted by you or by us?",
     answer:
-      "Both arrangements are possible and the choice usually depends on your IT policy. The specific hosting, interface and data-retention options we support are confirmed during scoping: [INSERT SURGICISS SOFTWARE DEPLOYMENT DETAIL].",
+      "Both arrangements are possible and the choice usually depends on your IT policy. The specific hosting, interface and data-retention options we support are confirmed during scopingon request.",
   },
   {
     question: "Do you deliver training on site?",
@@ -52,7 +52,7 @@ const faqs = [
   {
     question: "What regulatory information can you supply?",
     answer:
-      "We provide the documentation relevant to each product on request. Classifications and certifications differ by item and market: [INSERT REGULATORY CLASSIFICATION].",
+      "We provide the documentation relevant to each product on request. Classifications and certifications differ by item and marketon request.",
   },
 ];
 

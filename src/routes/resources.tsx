@@ -48,7 +48,7 @@ function ResourcesPage() {
       <PageBanner
         title="Resources"
         crumbs={[{ label: "Resources" }]}
-        lead="Short pieces written for the people doing the work. Downloadable versions are being prepared: [INSERT SURGICISS RESOURCE DOWNLOADS]."
+        lead="Short pieces written for the people doing the work. Downloadable versions are being preparedon request."
       />
 
       <section className="mx-auto max-w-[1200px] px-4 py-14">

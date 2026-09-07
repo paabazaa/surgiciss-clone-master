@@ -10,7 +10,6 @@ import {
   software,
   softwareDashboard,
 } from "@/data/catalogue";
-import { ProductCard, ServiceCard, SoftwareCard } from "@/components/site/Cards";
 import { company } from "@/data/company";
 
 export const Route = createFileRoute("/")({
@@ -39,18 +38,28 @@ export const Route = createFileRoute("/")({
 const slides = [
   {
     image: heroSterileProcessing,
-    title: "Sterile Instrument Systems",
-    body: "With considered technology and patient-centred expertise, SURGICISS supports the consistent delivery of clean, sterile, functional and relevant surgical instruments, equipment and supplies — on time and on budget.",
+    title: "SURGICISS LTD:",
+    body: "With advanced technologies and patient-centred expertise, SURGICISS instrument systems support the consistent delivery of clean, sterile, functional and relevant surgical instruments, equipment and supplies — on time and on budget.",
+  },
+  {
+    image: services[0]!.image,
+    title: "For patient safety and system viability:",
+    body: "Healthcare providers must improve quality, increase efficiency, eliminate waste and lower cost. We partner with them to make that possible.",
   },
   {
     image: heroMasterWrap,
     title: "Surgical Instrument Master Wrap",
-    body: "The Master Wrap adds a protective outer layer that helps displace handling impact before it can tear or puncture a wrapped instrument tray.",
+    body: "Master Wrap applies impact displacement to help prevent a tear or puncture of a wrapped instrument tray.",
   },
   {
     image: softwareDashboard,
-    title: "We supercharge instrument technicians",
-    body: "SURGICISS Matrix gives supervisors a single view of set location and status, so the department is managed on evidence rather than telephone calls.",
+    title: "We supercharge instrument technicians:",
+    body: "We support sterile processing technicians with practical skills, structured training and analytical technologies that show what is happening in the department.",
+  },
+  {
+    image: services[2]!.image,
+    title: "Enrol in our hospital viability programme:",
+    body: "A structured review of instrument sets, workflow and spend, carried out with your own team inside your own department.",
   },
 ];
 
@@ -58,7 +67,7 @@ function HomePage() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const timer = window.setInterval(() => setIndex((current) => (current + 1) % slides.length), 7000);
+    const timer = window.setInterval(() => setIndex((current) => (current + 1) % slides.length), 6000);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -66,16 +75,17 @@ function HomePage() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-secondary">
+      {/* Hero slider */}
+      <section className="relative isolate overflow-hidden bg-secondary" aria-label="Featured">
         <img
           src={slide.image}
           alt=""
           width={1920}
-          height={1000}
+          height={800}
           className="absolute inset-0 h-full w-full object-cover opacity-45"
         />
-        <div className="relative mx-auto flex min-h-[380px] max-w-[900px] flex-col items-center justify-center px-12 py-20 text-center sm:min-h-[440px]">
-          <h1 className="text-2xl font-semibold text-secondary-foreground sm:text-3xl md:text-4xl">{slide.title}</h1>
+        <div className="relative mx-auto flex min-h-[340px] max-w-[900px] flex-col items-center justify-center px-12 py-16 text-center sm:min-h-[420px]">
+          <h1 className="text-xl font-semibold text-secondary-foreground sm:text-2xl md:text-3xl">{slide.title}</h1>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-secondary-foreground/90 sm:text-base">
             {slide.body}
           </p>
@@ -98,7 +108,8 @@ function HomePage() {
         </button>
       </section>
 
-      <section className="bg-surface-tint" aria-label="Software shortcuts">
+      {/* Software quick links */}
+      <section className="bg-surface-tint" aria-label="Software">
         <div className="mx-auto grid max-w-[1200px] gap-4 px-4 py-8 sm:grid-cols-2 lg:grid-cols-4">
           {software.map((item) => (
             <Link
@@ -113,118 +124,125 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1200px] px-4 py-14">
-        <div className="grid gap-8 md:grid-cols-[280px_1fr] lg:gap-14">
-          <div>
-            <h2 className="section-title">Sterile Instrument Systems</h2>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{company.tagline}</p>
-          </div>
-          <div className="rich-text text-sm sm:text-base">
-            <p>
-              The difficulty in healthcare today is rarely a lack of advanced technology or skilled hands. More often it
-              is the absence of simple, practical innovations that help each pair of hands get the basics right first
-              time. Those apparently small steps are where even well-equipped theatres come unstuck.
-            </p>
-            <p>
-              SURGICISS works on that ground: products, software and methods that prevent avoidable error, reduce delay,
-              take cost out of the process and make compliance something a department can demonstrate rather than hope
-              for.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-surface-tint py-14">
-        <div className="mx-auto max-w-[1200px] px-4">
-          <div className="grid gap-6 md:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard key={service.slug} {...service} />
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link
-              to="/services"
-              className="inline-block border border-primary px-6 py-3 text-xs font-semibold uppercase tracking-wide text-primary hover:bg-primary hover:text-primary-foreground"
-            >
-              All services
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[1200px] px-4 py-14">
-        <h2 className="section-title">Products</h2>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-          Through research, development and steady use in real departments, our products, software and methods are
-          intended to support patient safety and the financial health of the services that deliver it.
+      {/* Company introduction */}
+      <section className="mx-auto max-w-[1200px] px-4 py-12">
+        <h2 className="text-center text-xl font-semibold uppercase tracking-wide text-secondary sm:text-2xl">
+          {company.name}
+        </h2>
+        <h3 className="mt-3 text-center text-base font-semibold text-primary sm:text-lg">{company.tagline}</h3>
+        <p className="mx-auto mt-5 max-w-4xl text-center text-sm leading-relaxed text-muted-foreground sm:text-base">
+          The problem with healthcare today is not the lack of advanced technologies and skilled hands, but the absence
+          of simple innovations that help each pair of hands get the basics done right the first time. These seemingly
+          trivial steps have led to failure, time and again, in even the most sophisticated operating rooms. For patient
+          safety, SURGICISS LTD provides simple innovations that prevent error, minimise delay, reduce unnecessary cost
+          and support real-time compliance in sterile processing departments and operating rooms.
         </p>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.slice(0, 3).map((product) => (
-            <ProductCard key={product.slug} {...product} />
-          ))}
-        </div>
-        <div className="mt-8 text-center">
-          <Link
-            to="/products"
-            className="inline-block bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-wide text-primary-foreground hover:bg-primary-dark"
-          >
-            View all products
-          </Link>
-        </div>
       </section>
 
-      <section className="bg-surface-tint py-14">
-        <div className="mx-auto max-w-[1200px] px-4">
-          <h2 className="section-title">Software</h2>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            Four systems covering instrument sets, case carts, resuscitation trolleys and flexible endoscopes.
-          </p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {software.map((item) => (
-              <SoftwareCard key={item.slug} {...item} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[1200px] px-4 py-14">
-        <h2 className="section-title">Programmes</h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {programmes.map((programme) => (
-            <article key={programme.slug} className="border-l-4 border-primary bg-card p-6 shadow-card">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-secondary">{programme.name}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{programme.summary}</p>
+      {/* Services */}
+      <section className="mx-auto max-w-[1200px] px-4 pb-12">
+        <div className="grid gap-8 md:grid-cols-3">
+          {services.map((service) => (
+            <article key={service.slug}>
+              <Link to="/services/$slug" params={{ slug: service.slug }} className="block overflow-hidden bg-muted">
+                <img
+                  src={service.image}
+                  alt={service.name}
+                  loading="lazy"
+                  width={800}
+                  height={520}
+                  className="h-48 w-full object-cover"
+                />
+              </Link>
+              <h3 className="mt-4 text-sm font-semibold uppercase tracking-wide text-secondary">
+                <Link to="/services/$slug" params={{ slug: service.slug }} className="hover:text-primary">
+                  {service.name}
+                </Link>
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{service.summary}</p>
               <Link
-                to="/programmes/$slug"
-                params={{ slug: programme.slug }}
-                className="mt-4 inline-block text-xs font-semibold uppercase tracking-wide text-primary hover:underline"
+                to="/services/$slug"
+                params={{ slug: service.slug }}
+                className="mt-3 inline-block text-xs font-semibold uppercase tracking-wide text-primary hover:underline"
               >
-                Read more
+                Read More
               </Link>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="bg-secondary">
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-5 px-4 py-12 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-2xl">
-            <h2 className="text-xl font-semibold text-secondary-foreground">
-              Tell us what your department is working with
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-secondary-foreground/80">
-              Send us the sets, the volumes and the problem you are trying to solve, and we will come back with a
-              considered quotation rather than a price list.
-            </p>
+      {/* Products */}
+      <section className="bg-surface-tint py-12">
+        <div className="mx-auto max-w-[1200px] px-4">
+          <h2 className="text-center text-xl font-semibold uppercase tracking-wide text-secondary sm:text-2xl">
+            Products
+          </h2>
+          <p className="mx-auto mt-4 max-w-4xl text-center text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Through research, development and the steady use of instrument processing products, software and methods in
+            real departments, we work to support patient safety and the viability of the services that deliver it.
+          </p>
+          <div className="mt-8 grid gap-8 md:grid-cols-3">
+            {featured.map((product) => (
+              <article key={product.slug}>
+                <Link to="/products/$slug" params={{ slug: product.slug }} className="block overflow-hidden bg-muted">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    loading="lazy"
+                    width={800}
+                    height={520}
+                    className="h-48 w-full object-cover"
+                  />
+                </Link>
+                <h3 className="mt-4 text-sm font-semibold uppercase tracking-wide text-secondary">
+                  <Link to="/products/$slug" params={{ slug: product.slug }} className="hover:text-primary">
+                    {product.name}
+                  </Link>
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{product.summary}</p>
+                <Link
+                  to="/request-quote"
+                  search={{ item: product.name }}
+                  className="mt-3 inline-block text-xs font-semibold uppercase tracking-wide text-primary hover:underline"
+                >
+                  Request for a quote
+                </Link>
+              </article>
+            ))}
           </div>
-          <Link
-            to="/request-quote"
-            className="self-start bg-primary px-6 py-3 text-sm font-semibold uppercase tracking-wide text-primary-foreground hover:bg-primary-dark"
-          >
-            Request a quote
-          </Link>
+          <div className="mt-10 text-center">
+            <Link
+              to="/products"
+              className="inline-block bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-wide text-primary-foreground hover:bg-primary-dark"
+            >
+              All Products
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Programme note, mirroring the reference programme promotion */}
+      <section className="mx-auto max-w-[1200px] px-4 py-12">
+        <div className="grid gap-6 md:grid-cols-3">
+          {programmes.map((programme) => (
+            <article key={programme.slug} className="border-t-2 border-primary bg-card p-5">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-secondary">{programme.name}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{programme.summary}</p>
+              <Link
+                to="/programmes/$slug"
+                params={{ slug: programme.slug }}
+                className="mt-3 inline-block text-xs font-semibold uppercase tracking-wide text-primary hover:underline"
+              >
+                Read More
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
     </>
   );
 }
+
+const featuredSlugs = ["quality-assurance-card", "surgical-instrument-master-wrap", "universal-surgical-count-sheet-holder"];
+const featured = featuredSlugs.map((slug) => products.find((product) => product.slug === slug)!).filter(Boolean);

@@ -48,8 +48,7 @@ function ServicesPage() {
             most difference in the first quarter.
           </p>
           <p>
-            Scope, duration and fees are set out in writing before anything begins:{" "}
-            {"[INSERT SURGICISS SERVICE ENGAGEMENT TERMS]"}.
+            Scope, duration and fees are set out in writing before anything begins:{" "} on request.
           </p>
         </div>
       </section>

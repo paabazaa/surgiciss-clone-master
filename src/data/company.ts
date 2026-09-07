@@ -1,21 +1,28 @@
 /**
  * Central place for SURGICISS LTD contact and corporate details.
  *
- * Anything wrapped in square brackets is a placeholder: the real value has not
- * been supplied yet, so it is shown verbatim rather than invented.
+ * Leave a field as an empty string until the real value is supplied — nothing
+ * is invented here. Empty fields fall back to a neutral phrase through
+ * `detail()` so the pages never show bracketed placeholder text.
  */
 export const company = {
   name: "SURGICISS LTD",
   shortName: "SURGICISS",
-  tagline: "Dedicated to best surgical outcomes.",
-  address: "[INSERT SURGICISS ADDRESS]",
-  phone: "[INSERT SURGICISS PHONE]",
-  email: "[INSERT SURGICISS EMAIL]",
-  registration: "[INSERT SURGICISS COMPANY REGISTRATION]",
-  hours: "[INSERT SURGICISS OPENING HOURS]",
-  linkedin: "[INSERT SURGICISS LINKEDIN]",
+  tagline: "We're dedicated to best surgical outcomes.",
+  // TODO: supply the registered SURGICISS LTD details.
+  address: "",
+  phone: "",
+  email: "",
+  registration: "",
+  hours: "",
+  linkedin: "",
   intro:
     "SURGICISS LTD works with hospitals, surgery centres and sterile services departments to support the consistent delivery of clean, sterile, functional and relevant surgical instruments, equipment and supplies — on time and on budget.",
 } as const;
+
+/** Returns the supplied detail, or a neutral phrase when it has not been provided yet. */
+export function detail(value: string, fallback = "Available on request"): string {
+  return value.trim().length > 0 ? value : fallback;
+}
 
 export const contactMethods = ["Email", "Telephone", "Either"] as const;

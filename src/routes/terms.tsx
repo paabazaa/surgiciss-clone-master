@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageBanner } from "@/components/site/PageBanner";
-import { company } from "@/data/company";
+import { company, detail } from "@/data/company";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -28,8 +28,8 @@ function TermsPage() {
         <div className="rich-text text-sm sm:text-base">
           <h2 className="text-lg font-semibold text-secondary">About this site</h2>
           <p>
-            This website is operated by {company.name}, company registration {company.registration}, registered at{" "}
-            {company.address}. By using the site you accept these terms.
+            This website is operated by {company.name}, company registration {detail(company.registration)}, registered at{" "}
+            {detail(company.address)}. By using the site you accept these terms.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold text-secondary">Product information</h2>
@@ -48,8 +48,7 @@ function TermsPage() {
 
           <h2 className="mt-8 text-lg font-semibold text-secondary">Quotations and orders</h2>
           <p>
-            Quotations are valid for the period stated on them and are subject to our conditions of sale:{" "}
-            {"[INSERT SURGICISS CONDITIONS OF SALE]"}. Prices shown in correspondence exclude tax and delivery unless
+            Quotations are valid for the period stated on them and are subject to our conditions of sale:{" "} on request. Prices shown in correspondence exclude tax and delivery unless
             stated otherwise.
           </p>
 
@@ -60,11 +59,10 @@ function TermsPage() {
           </p>
 
           <h2 className="mt-8 text-lg font-semibold text-secondary">Governing law</h2>
-          <p>These terms are governed by {"[INSERT SURGICISS GOVERNING LAW]"}.</p>
+          <p>These terms are governed by on request.</p>
 
           <p className="mt-8 text-xs text-muted-foreground">
-            Provided in good faith and not legal advice. Have these terms reviewed before publication:{" "}
-            {"[INSERT SURGICISS LEGAL REVIEW STATUS]"}.
+            Provided in good faith and not legal advice. Have these terms reviewed before publication:{" "} on request.
           </p>
         </div>
       </section>

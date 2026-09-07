@@ -84,22 +84,17 @@ export function SiteHeader() {
             allLabel="All Products"
           />
 
-          <Link to="/services" className={topLevel} activeProps={{ className: `${topLevel} text-primary` }}>
-            Services
-          </Link>
-          <Link to="/programmes" className={topLevel} activeProps={{ className: `${topLevel} text-primary` }}>
-            Programmes
-          </Link>
           <Link
             to="/count-sheet-holders"
             className={topLevel}
             activeProps={{ className: `${topLevel} text-primary` }}
           >
-            Count Sheet Holders
+            Instrument Count Sheet Holders
           </Link>
           <Link to="/contact-us" className={topLevel} activeProps={{ className: `${topLevel} text-primary` }}>
             Contact Us
           </Link>
+
         </nav>
 
         <button
@@ -122,15 +117,10 @@ export function SiteHeader() {
             </MobileLink>
             <MobileGroup label="Software" allTo="/software" allLabel="All Software" links={softwareLinks} onNavigate={() => setMobileOpen(false)} />
             <MobileGroup label="Products" allTo="/products" allLabel="All Products" links={productLinks} onNavigate={() => setMobileOpen(false)} />
-            <MobileLink to="/services" onNavigate={() => setMobileOpen(false)}>
-              Services
-            </MobileLink>
-            <MobileLink to="/programmes" onNavigate={() => setMobileOpen(false)}>
-              Programmes
-            </MobileLink>
             <MobileLink to="/count-sheet-holders" onNavigate={() => setMobileOpen(false)}>
-              Count Sheet Holders
+              Instrument Count Sheet Holders
             </MobileLink>
+
             <MobileLink to="/about" onNavigate={() => setMobileOpen(false)}>
               About
             </MobileLink>

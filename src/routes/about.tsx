@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageBanner } from "@/components/site/PageBanner";
 import { CtaBand } from "@/components/site/Cards";
-import { company } from "@/data/company";
+import { company, detail } from "@/data/company";
 import { heroSterileProcessing } from "@/data/catalogue";
 
 export const Route = createFileRoute("/about")({
@@ -58,15 +58,15 @@ function AboutPage() {
               </div>
               <div>
                 <dt className="font-medium text-foreground">Company registration</dt>
-                <dd className="text-muted-foreground">{company.registration}</dd>
+                <dd className="text-muted-foreground">{detail(company.registration)}</dd>
               </div>
               <div>
                 <dt className="font-medium text-foreground">Registered address</dt>
-                <dd className="text-muted-foreground">{company.address}</dd>
+                <dd className="text-muted-foreground">{detail(company.address)}</dd>
               </div>
               <div>
                 <dt className="font-medium text-foreground">Office hours</dt>
-                <dd className="text-muted-foreground">{company.hours}</dd>
+                <dd className="text-muted-foreground">{detail(company.hours)}</dd>
               </div>
             </dl>
           </div>

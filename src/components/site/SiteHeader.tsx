@@ -117,15 +117,10 @@ export function SiteHeader() {
             </MobileLink>
             <MobileGroup label="Software" allTo="/software" allLabel="All Software" links={softwareLinks} onNavigate={() => setMobileOpen(false)} />
             <MobileGroup label="Products" allTo="/products" allLabel="All Products" links={productLinks} onNavigate={() => setMobileOpen(false)} />
-            <MobileLink to="/services" onNavigate={() => setMobileOpen(false)}>
-              Services
-            </MobileLink>
-            <MobileLink to="/programmes" onNavigate={() => setMobileOpen(false)}>
-              Programmes
-            </MobileLink>
             <MobileLink to="/count-sheet-holders" onNavigate={() => setMobileOpen(false)}>
-              Count Sheet Holders
+              Instrument Count Sheet Holders
             </MobileLink>
+
             <MobileLink to="/about" onNavigate={() => setMobileOpen(false)}>
               About
             </MobileLink>

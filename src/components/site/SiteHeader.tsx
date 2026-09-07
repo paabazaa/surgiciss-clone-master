@@ -84,22 +84,17 @@ export function SiteHeader() {
             allLabel="All Products"
           />
 
-          <Link to="/services" className={topLevel} activeProps={{ className: `${topLevel} text-primary` }}>
-            Services
-          </Link>
-          <Link to="/programmes" className={topLevel} activeProps={{ className: `${topLevel} text-primary` }}>
-            Programmes
-          </Link>
           <Link
             to="/count-sheet-holders"
             className={topLevel}
             activeProps={{ className: `${topLevel} text-primary` }}
           >
-            Count Sheet Holders
+            Instrument Count Sheet Holders
           </Link>
           <Link to="/contact-us" className={topLevel} activeProps={{ className: `${topLevel} text-primary` }}>
             Contact Us
           </Link>
+
         </nav>
 
         <button

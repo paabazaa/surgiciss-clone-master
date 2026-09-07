@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageBanner } from "@/components/site/PageBanner";
-import { company } from "@/data/company";
+import { company, detail } from "@/data/company";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -28,8 +28,8 @@ function TermsPage() {
         <div className="rich-text text-sm sm:text-base">
           <h2 className="text-lg font-semibold text-secondary">About this site</h2>
           <p>
-            This website is operated by {company.name}, company registration {company.registration}, registered at{" "}
-            {company.address}. By using the site you accept these terms.
+            This website is operated by {company.name}, company registration {detail(company.registration)}, registered at{" "}
+            {detail(company.address)}. By using the site you accept these terms.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold text-secondary">Product information</h2>

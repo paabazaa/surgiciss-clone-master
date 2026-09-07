@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageBanner } from "@/components/site/PageBanner";
-import { company } from "@/data/company";
+import { company, detail } from "@/data/company";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
@@ -53,7 +53,7 @@ function PrivacyPage() {
           <h2 className="mt-8 text-lg font-semibold text-secondary">Your rights</h2>
           <p>
             You can ask us for a copy of the information we hold about you, ask us to correct it, or ask us to delete it.
-            Write to {company.email} or {company.address}.
+            Write to {detail(company.email, "our enquiry form")} or {detail(company.address, "our registered address")}.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold text-secondary">Cookies</h2>

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageBanner } from "@/components/site/PageBanner";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
-import { company } from "@/data/company";
+import { company, detail } from "@/data/company";
 
 export const Route = createFileRoute("/request-quote")({
   validateSearch: (search: Record<string, unknown>): { item?: string } =>
@@ -60,9 +60,9 @@ function RequestQuotePage() {
             </div>
             <div className="border border-border p-6">
               <h2 className="text-base font-semibold uppercase tracking-wide text-secondary">Prefer to speak to us?</h2>
-              <p className="mt-3 text-muted-foreground">{company.phone}</p>
-              <p className="text-muted-foreground">{company.email}</p>
-              <p className="mt-2 text-muted-foreground">{company.hours}</p>
+              <p className="mt-3 text-muted-foreground">{detail(company.phone, "Telephone available on request")}</p>
+              <p className="text-muted-foreground">{detail(company.email, "Use the form on this page")}</p>
+              <p className="mt-2 text-muted-foreground">{detail(company.hours, "Opening hours available on request")}</p>
             </div>
           </aside>
         </div>

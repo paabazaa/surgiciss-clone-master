@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageBanner } from "@/components/site/PageBanner";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
-import { company } from "@/data/company";
+import { company, detail } from "@/data/company";
 
 export const Route = createFileRoute("/contact-us")({
   head: () => ({
@@ -30,8 +30,8 @@ export const Route = createFileRoute("/contact-us")({
           mainEntity: {
             "@type": "Organization",
             name: "SURGICISS LTD",
-            telephone: company.phone,
-            email: company.email,
+            telephone: company.phone || undefined,
+            email: company.email || undefined,
           },
         }),
       },
@@ -57,23 +57,23 @@ function ContactPage() {
               <dl className="mt-4 space-y-3 text-muted-foreground">
                 <div>
                   <dt className="font-medium text-foreground">Address</dt>
-                  <dd>{company.address}</dd>
+                  <dd>{detail(company.address, "Address available on request")}</dd>
                 </div>
                 <div>
                   <dt className="font-medium text-foreground">Telephone</dt>
-                  <dd>{company.phone}</dd>
+                  <dd>{detail(company.phone, "Telephone available on request")}</dd>
                 </div>
                 <div>
                   <dt className="font-medium text-foreground">Email</dt>
-                  <dd>{company.email}</dd>
+                  <dd>{detail(company.email, "Use the enquiry form")}</dd>
                 </div>
                 <div>
                   <dt className="font-medium text-foreground">Office hours</dt>
-                  <dd>{company.hours}</dd>
+                  <dd>{detail(company.hours, "Available on request")}</dd>
                 </div>
                 <div>
                   <dt className="font-medium text-foreground">Company registration</dt>
-                  <dd>{company.registration}</dd>
+                  <dd>{detail(company.registration)}</dd>
                 </div>
               </dl>
             </div>

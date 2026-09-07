@@ -220,7 +220,7 @@ export const products: Product[] = [
     image: productHealthMonitor,
     body: [
       "The Basic Health Monitor is a low-cost indicator intended to support the simple, repeated checks that underpin a dependable monitoring routine.",
-      "Full performance characteristics and intended use for the SURGICISS version of this device have not yet been supplied: [INSERT BASIC HEALTH MONITOR PRODUCT INFORMATION].",
+      "Full performance characteristics and intended use for the SURGICISS version of this device have not yet been suppliedon request.",
     ],
     features: [
       "Single-use indicator format",
@@ -246,7 +246,7 @@ export const software: Software[] = [
     body: [
       "SURGICISS Matrix is a sterile processing management system built around the daily reality of a sterile services department: sets moving continuously between decontamination, assembly, sterilisation, storage and theatre.",
       "It records where each set is, what it contains and who handled it, so that supervisors can see the state of the department without walking the floor and chasing paperwork.",
-      "Detailed module behaviour, hosting arrangements and integration options for the SURGICISS deployment are confirmed during scoping: [INSERT SURGICISS MATRIX TECHNICAL DETAIL].",
+      "Detailed module behaviour, hosting arrangements and integration options for the SURGICISS deployment are confirmed during scopingon request.",
     ],
     modules: [
       "Set tracking across processing stages",
@@ -269,7 +269,7 @@ export const software: Software[] = [
     body: [
       "Case Cart Matrix covers the picking, checking and dispatch of case carts against the theatre list.",
       "Each cart is built from a defined picking list, checked before it leaves the department and recorded on dispatch, which makes shortages visible before the trolley reaches theatre rather than afterwards.",
-      "Scope of the SURGICISS configuration, including how theatre schedules are received, is agreed during implementation: [INSERT CASE CART MATRIX CONFIGURATION DETAIL].",
+      "Scope of the SURGICISS configuration, including how theatre schedules are received, is agreed during implementationon request.",
     ],
     modules: [
       "Picking lists by procedure",
@@ -291,7 +291,7 @@ export const software: Software[] = [
     body: [
       "Resuscitation trolleys have to be checked on a schedule, with contents in date and seals intact. Paper logs make it hard to show, at a glance, which trolleys are due.",
       "Crash Cart Matrix holds the trolley inventory, the check schedule and the expiry dates, and keeps a record of who completed each check and when.",
-      "Trolley templates and check frequencies are configured to the SURGICISS customer's own policy: [INSERT CRASH CART MATRIX POLICY DETAIL].",
+      "Trolley templates and check frequencies are configured to the SURGICISS customer's own policyon request.",
     ],
     modules: [
       "Trolley inventory templates",
@@ -313,7 +313,7 @@ export const software: Software[] = [
     body: [
       "Flexible endoscopes carry the tightest traceability expectations of any reusable device, because each scope must be linked to a reprocessing record and a patient episode.",
       "Endoscope Matrix records the reprocessing steps completed for each scope, together with storage and drying times, so that a scope is only issued when its record supports it.",
-      "Traceability fields and interfaces to washer-disinfectors are confirmed with the customer: [INSERT ENDOSCOPE MATRIX TRACEABILITY DETAIL].",
+      "Traceability fields and interfaces to washer-disinfectors are confirmed with the customeron request.",
     ],
     modules: [
       "Scope register",
@@ -375,7 +375,7 @@ export const services: Service[] = [
     body: [
       "No one can give what they do not have. A processing technician cannot deliver dependable instrument outcomes without a working knowledge of sterile sciences.",
       "Our training programme covers decontamination, inspection and assembly, packaging, sterilisation and storage, taught around the equipment and instrument sets the team handles every day rather than as abstract theory.",
-      "Programme length, assessment and any certification arrangements are agreed with each customer: [INSERT SURGICISS TRAINING PROGRAMME DETAIL].",
+      "Programme length, assessment and any certification arrangements are agreed with each customeron request.",
     ],
     includes: [
       "Decontamination principles and practice",
@@ -396,7 +396,7 @@ export const programmes: Programme[] = [
     body: [
       "A great deal of the money a department spends is committed by habit: sets built larger than the procedure needs, instruments replaced when they could be repaired, consumables ordered because a shelf looks empty.",
       "Our cost reduction programme works through those decisions with the department, using its own records, and reports where money is going and what could reasonably be recovered.",
-      "Commercial terms for the SURGICISS programme are set out in the proposal: [INSERT SURGICISS PROGRAMME TERMS].",
+      "Commercial terms for the SURGICISS programme are set out in the proposalon request.",
     ],
   },
   {

@@ -41,13 +41,13 @@ function PrivacyPage() {
           <h2 className="mt-8 text-lg font-semibold text-secondary">How long we keep it</h2>
           <p>
             Enquiry records are retained for as long as needed to deal with the enquiry and any resulting supply, then
-            reviewed and deleted: {"[INSERT SURGICISS DATA RETENTION PERIOD]"}.
+            reviewed and deletedon request.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold text-secondary">Who processes it</h2>
           <p>
             Enquiries are handled by SURGICISS staff. Where a hosting or email provider processes data on our behalf, they
-            do so under written terms: {"[INSERT SURGICISS DATA PROCESSORS]"}.
+            do so under written termson request.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold text-secondary">Your rights</h2>
@@ -59,12 +59,11 @@ function PrivacyPage() {
           <h2 className="mt-8 text-lg font-semibold text-secondary">Cookies</h2>
           <p>
             This site works without advertising or tracking cookies. Any measurement we add in future will be described
-            here first: {"[INSERT SURGICISS COOKIE DETAIL]"}.
+            here firston request.
           </p>
 
           <p className="mt-8 text-xs text-muted-foreground">
-            This notice is provided in good faith and is not legal advice. Have it reviewed before publication:{" "}
-            {"[INSERT SURGICISS LEGAL REVIEW STATUS]"}.
+            This notice is provided in good faith and is not legal advice. Have it reviewed before publication:{" "} on request.
           </p>
         </div>
       </section>

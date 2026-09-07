@@ -43,8 +43,7 @@ function SoftwarePage() {
             </p>
             <p>
               Our software brings those records together so that the state of the department can be seen at a glance and
-              reconstructed later. Hosting, interfaces and configuration are agreed during scoping rather than assumed:{" "}
-              {"[INSERT SURGICISS SOFTWARE DEPLOYMENT DETAIL]"}.
+              reconstructed later. Hosting, interfaces and configuration are agreed during scoping rather than assumed:{" "} on request.
             </p>
           </div>
           <img

@@ -17,9 +17,9 @@ export const Route = createFileRoute("/count-sheet-holders")({
         property: "og:description",
         content: "Holders that keep count sheets readable, protected and with the correct tray.",
       },
-      { property: "og:url", content: "/count-sheet-holders" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/count-sheet-holders" },
     ],
-    links: [{ rel: "canonical", href: "/count-sheet-holders" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/count-sheet-holders" }],
   }),
   component: CountSheetHoldersPage,
 });

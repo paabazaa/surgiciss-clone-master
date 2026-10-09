@@ -17,9 +17,9 @@ export const Route = createFileRoute("/products/")({
         property: "og:description",
         content: "Sterile barrier, workstation organisation and monitoring products for sterile services departments.",
       },
-      { property: "og:url", content: "/products" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/products" },
     ],
-    links: [{ rel: "canonical", href: "/products" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/products" }],
   }),
   component: ProductsPage,
 });

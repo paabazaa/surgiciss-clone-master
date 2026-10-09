@@ -17,9 +17,9 @@ export const Route = createFileRoute("/software/")({
         property: "og:description",
         content: "Four systems covering instrument sets, case carts, resuscitation trolleys and flexible endoscopes.",
       },
-      { property: "og:url", content: "/software" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/software" },
     ],
-    links: [{ rel: "canonical", href: "/software" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/software" }],
   }),
   component: SoftwarePage,
 });

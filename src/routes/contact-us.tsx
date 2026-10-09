@@ -17,9 +17,9 @@ export const Route = createFileRoute("/contact-us")({
         property: "og:description",
         content: "Get in touch with SURGICISS LTD by email, telephone or the enquiry form.",
       },
-      { property: "og:url", content: "/contact-us" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/contact-us" },
     ],
-    links: [{ rel: "canonical", href: "/contact-us" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/contact-us" }],
     scripts: [
       {
         type: "application/ld+json",

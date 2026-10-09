@@ -18,9 +18,9 @@ export const Route = createFileRoute("/about")({
         property: "og:description",
         content: "How SURGICISS LTD works with sterile services departments in hospitals and surgery centres.",
       },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/about" }],
   }),
   component: AboutPage,
 });

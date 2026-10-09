@@ -16,9 +16,9 @@ export const Route = createFileRoute("/resources")({
         property: "og:description",
         content: "Guidance notes and checklists for sterile services teams.",
       },
-      { property: "og:url", content: "/resources" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/resources" },
     ],
-    links: [{ rel: "canonical", href: "/resources" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/resources" }],
   }),
   component: ResourcesPage,
 });

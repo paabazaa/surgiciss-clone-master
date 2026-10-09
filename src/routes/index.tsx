@@ -27,10 +27,10 @@ export const Route = createFileRoute("/")({
         content:
           "Sterile barrier products, sterile services software, training and improvement programmes for hospitals and surgery centres.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/" }],
   }),
   component: HomePage,
 });

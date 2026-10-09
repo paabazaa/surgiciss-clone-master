@@ -22,7 +22,7 @@ export function SiteHeader() {
 
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(event.target as Node)) setOpenMenu(null);
+      if (navRef.current &&!navRef.current.contains(event.target as Node)) setOpenMenu(null);
     };
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -43,14 +43,16 @@ export function SiteHeader() {
   return (
     <header
       className={`sticky top-0 z-50 border-t-2 border-primary bg-background transition-shadow ${
-        stuck ? "shadow-card" : ""
+        stuck? "shadow-card" : ""
       }`}
     >
       <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-4 py-3 lg:py-4">
         <Link to="/" className="flex items-center gap-3" aria-label={`${company.name} home`}>
-          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground">
-            S
-          </span>
+          <img
+            src={`${import.meta.env.BASE_URL}logo.png`}
+            alt="SURGICISS Logo"
+            className="h-11 w-auto object-contain"
+          />
           <span className="leading-tight">
             <span className="block text-lg font-bold tracking-tight text-secondary">SURGICISS</span>
             <span className="block text-[0.6rem] font-medium uppercase tracking-[0.22em] text-muted-foreground">
@@ -67,7 +69,7 @@ export function SiteHeader() {
           <DesktopDropdown
             label="Software"
             open={openMenu === "software"}
-            onToggle={() => setOpenMenu(openMenu === "software" ? null : "software")}
+            onToggle={() => setOpenMenu(openMenu === "software"? null : "software")}
             onClose={() => setOpenMenu(null)}
             links={softwareLinks}
             allTo="/software"
@@ -77,7 +79,7 @@ export function SiteHeader() {
           <DesktopDropdown
             label="Products"
             open={openMenu === "products"}
-            onToggle={() => setOpenMenu(openMenu === "products" ? null : "products")}
+            onToggle={() => setOpenMenu(openMenu === "products"? null : "products")}
             onClose={() => setOpenMenu(null)}
             links={productLinks}
             allTo="/products"
@@ -94,7 +96,6 @@ export function SiteHeader() {
           <Link to="/contact-us" className={topLevel} activeProps={{ className: `${topLevel} text-primary` }}>
             Contact Us
           </Link>
-
         </nav>
 
         <button
@@ -104,7 +105,7 @@ export function SiteHeader() {
           aria-controls="mobile-navigation"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {mobileOpen? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           Menu
         </button>
       </div>
@@ -120,7 +121,6 @@ export function SiteHeader() {
             <MobileLink to="/count-sheet-holders" onNavigate={() => setMobileOpen(false)}>
               Instrument Count Sheet Holders
             </MobileLink>
-
             <MobileLink to="/about" onNavigate={() => setMobileOpen(false)}>
               About
             </MobileLink>
@@ -207,9 +207,10 @@ function MobileLink({
   children,
   onNavigate,
 }: {
-  to: "/" | "/services" | "/programmes" | "/count-sheet-holders" | "/about" | "/contact-us";
+  to: string;
   children: React.ReactNode;
   onNavigate: () => void;
+  params?: any;
 }) {
   return (
     <Link
@@ -231,7 +232,7 @@ function MobileGroup({
 }: {
   label: string;
   links: DropdownLink[];
-  allTo: "/software" | "/products";
+  allTo: string;
   allLabel: string;
   onNavigate: () => void;
 }) {
@@ -245,7 +246,7 @@ function MobileGroup({
         className="flex w-full items-center justify-between py-3 text-sm font-medium uppercase tracking-wide text-foreground"
       >
         {label}
-        <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden />
+        <ChevronDown className={`h-4 w-4 transition-transform ${open? "rotate-180" : ""}`} aria-hidden />
       </button>
       {open && (
         <div className="pb-2">

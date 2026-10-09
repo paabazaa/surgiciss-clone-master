@@ -15,24 +15,12 @@ jobs:
         with:
           node-version: 20
       - uses: actions/configure-pages@v4
-      - run: npm install
+      - run: npm ci
       - run: npm run build
-      - run: |
-          echo "Checking build outputs..."
-          ls -la
-          ls -la dist || echo "no dist"
-          ls -la dist/client || echo "no dist/client"
-          ls -la.output || echo "no.output"
-          ls -la.output/public || echo "no.output/public"
-      - run: |
-          if [ -d ".output/public" ]; then cp -r.output/public./site;
-          elif [ -d "dist/client" ]; then cp -r dist/client./site;
-          elif [ -d "dist" ]; then cp -r dist./site;
-          else echo "BUILD FAILED - no output folder" && exit 1; fi
-          ls -la./site
+      - run: ls -R
       - uses: actions/upload-pages-artifact@v3
         with:
-          path:./site
+          path: dist/client
   deploy:
     needs: build
     runs-on: ubuntu-latest

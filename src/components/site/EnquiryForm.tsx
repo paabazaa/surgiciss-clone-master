@@ -61,8 +61,8 @@ export function EnquiryForm({
       <div className="border border-primary/30 bg-accent p-6" role="status">
         <h2 className="text-lg font-semibold text-accent-foreground">Thank you — your enquiry has been recorded.</h2>
         <p className="mt-2 text-sm leading-relaxed text-foreground">
-          A member of the SURGICISS team will be in touch using the contact method you chose. If your request is urgent,
-          please call us on on request.
+          A member of the SURGICISS team will be in touch using the contact method you chose. If your request is urgent, please say so
+          in a follow-up message.
         </p>
         <button
           type="button"

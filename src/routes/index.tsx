@@ -221,25 +221,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Programme note, mirroring the reference programme promotion */}
-      <section className="mx-auto max-w-[1200px] px-4 py-12">
-        <div className="grid gap-6 md:grid-cols-3">
-          {programmes.map((programme) => (
-            <article key={programme.slug} className="border-t-2 border-primary bg-card p-5">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-secondary">{programme.name}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{programme.summary}</p>
-              <Link
-                to="/programmes/$slug"
-                params={{ slug: programme.slug }}
-                className="mt-3 inline-block text-xs font-semibold uppercase tracking-wide text-primary hover:underline"
-              >
-                Read More
-              </Link>
-            </article>
-          ))}
-        </div>
-      </section>
     </>
   );
 }

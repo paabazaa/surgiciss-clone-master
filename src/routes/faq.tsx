@@ -32,7 +32,7 @@ const faqs = [
   {
     question: "What are your lead times?",
     answer:
-      "Lead times depend on the item and the quantity orderedon request. We confirm a date in writing with every quotation.",
+      "Lead times depend on the item and the quantity ordered. We confirm a date in writing with every quotation.",
   },
   {
     question: "Can we trial a product before committing?",

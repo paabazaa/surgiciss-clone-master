@@ -12,9 +12,9 @@ export const Route = createFileRoute("/terms")({
       },
       { property: "og:title", content: "Terms of use — SURGICISS LTD" },
       { property: "og:description", content: "Terms governing use of the SURGICISS LTD website and quotations." },
-      { property: "og:url", content: "/terms" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/terms" },
     ],
-    links: [{ rel: "canonical", href: "/terms" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/terms" }],
   }),
   component: TermsPage,
 });

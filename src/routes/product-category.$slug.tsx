@@ -20,9 +20,9 @@ export const Route = createFileRoute("/product-category/$slug")({
         { name: "description", content: category.description },
         { property: "og:title", content: `${category.name} — SURGICISS LTD` },
         { property: "og:description", content: category.description },
-        { property: "og:url", content: `/product-category/${category.slug}` },
+        { property: "og:url", content: `https://surgiciss-clone-master.lovable.app/product-category/${category.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/product-category/${category.slug}` }],
+      links: [{ rel: "canonical", href: `https://surgiciss-clone-master.lovable.app/product-category/${category.slug}` }],
     };
   },
   component: CategoryPage,

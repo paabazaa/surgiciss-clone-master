@@ -16,9 +16,9 @@ export const Route = createFileRoute("/faq")({
         property: "og:description",
         content: "Common questions about SURGICISS products, software, lead times and quotations.",
       },
-      { property: "og:url", content: "/faq" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/faq" },
     ],
-    links: [{ rel: "canonical", href: "/faq" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/faq" }],
   }),
   component: FaqPage,
 });

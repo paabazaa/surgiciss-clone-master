@@ -113,7 +113,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "SURGICISS LTD",
           description:
             "Sterile barrier products, sterile services software and department support for hospitals and surgery centres.",
-          url: "/",
+          url: "https://surgiciss-clone-master.lovable.app/",
         }),
       },
     ],

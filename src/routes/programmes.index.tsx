@@ -17,9 +17,9 @@ export const Route = createFileRoute("/programmes/")({
         property: "og:description",
         content: "Structured programmes for cost reduction, loaner instrument processing and sterile forensics.",
       },
-      { property: "og:url", content: "/programmes" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/programmes" },
     ],
-    links: [{ rel: "canonical", href: "/programmes" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/programmes" }],
   }),
   component: ProgrammesPage,
 });

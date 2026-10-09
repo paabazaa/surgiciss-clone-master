@@ -17,9 +17,9 @@ export const Route = createFileRoute("/services/")({
         property: "og:description",
         content: "Management and leadership support, morale sessions and technician training for sterile services teams.",
       },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/services" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/services" }],
   }),
   component: ServicesPage,
 });

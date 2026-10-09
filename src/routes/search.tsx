@@ -13,10 +13,10 @@ export const Route = createFileRoute("/search")({
       },
       { property: "og:title", content: "Search — SURGICISS LTD" },
       { property: "og:description", content: "Search SURGICISS products, software, services and programmes." },
-      { property: "og:url", content: "/search" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/search" },
       { name: "robots", content: "noindex" },
     ],
-    links: [{ rel: "canonical", href: "/search" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/search" }],
   }),
   component: SearchPage,
 });

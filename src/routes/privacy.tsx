@@ -12,9 +12,9 @@ export const Route = createFileRoute("/privacy")({
       },
       { property: "og:title", content: "Privacy notice — SURGICISS LTD" },
       { property: "og:description", content: "How SURGICISS LTD handles personal information from enquiries." },
-      { property: "og:url", content: "/privacy" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/privacy" },
     ],
-    links: [{ rel: "canonical", href: "/privacy" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/privacy" }],
   }),
   component: PrivacyPage,
 });

@@ -19,9 +19,9 @@ export const Route = createFileRoute("/request-quote")({
         property: "og:description",
         content: "Send SURGICISS your requirement and we will come back with a considered quotation.",
       },
-      { property: "og:url", content: "/request-quote" },
+      { property: "og:url", content: "https://surgiciss-clone-master.lovable.app/request-quote" },
     ],
-    links: [{ rel: "canonical", href: "/request-quote" }],
+    links: [{ rel: "canonical", href: "https://surgiciss-clone-master.lovable.app/request-quote" }],
   }),
   component: RequestQuotePage,
 });

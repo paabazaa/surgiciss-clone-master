@@ -20,10 +20,10 @@ export const Route = createFileRoute("/programmes/$slug")({
         { name: "description", content: programme.summary },
         { property: "og:title", content: `${programme.name} — SURGICISS LTD` },
         { property: "og:description", content: programme.summary },
-        { property: "og:url", content: `/programmes/${programme.slug}` },
+        { property: "og:url", content: `https://surgiciss-clone-master.lovable.app/programmes/${programme.slug}` },
         { property: "og:type", content: "article" },
       ],
-      links: [{ rel: "canonical", href: `/programmes/${programme.slug}` }],
+      links: [{ rel: "canonical", href: `https://surgiciss-clone-master.lovable.app/programmes/${programme.slug}` }],
     };
   },
   component: ProgrammeDetailPage,

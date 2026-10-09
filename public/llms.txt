@@ -1,0 +1,12 @@
+# SURGICISS LTD
+
+> SURGICISS LTD supplies sterile barrier products, sterile services software and department support for hospitals, surgery centres and sterile services departments.
+
+## Main pages
+- [Home](https://surgiciss-clone-master.lovable.app/)
+- [Products](https://surgiciss-clone-master.lovable.app/products): tray integrity tests, brush racks, count sheet holders, master wrap, quality assurance cards, monitoring
+- [Software](https://surgiciss-clone-master.lovable.app/software): SURGICISS Matrix (AI), Case Cart Matrix, Crash Cart Matrix, Endoscope Matrix
+- [Services](https://surgiciss-clone-master.lovable.app/services): management and leadership, morale sessions, technician training
+- [Programmes](https://surgiciss-clone-master.lovable.app/programmes): cost reduction, loaner instrument processing, sterile forensics
+- [Request a quote](https://surgiciss-clone-master.lovable.app/request-quote)
+- [Contact](https://surgiciss-clone-master.lovable.app/contact-us)

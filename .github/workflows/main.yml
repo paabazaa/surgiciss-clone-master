@@ -21,7 +21,7 @@ jobs:
       - run: ls -la dist/client
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path:.output/public
   deploy:
     needs: build
     runs-on: ubuntu-latest

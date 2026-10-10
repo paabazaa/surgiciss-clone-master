@@ -44,7 +44,13 @@ export function SiteHeader() {
     <header className={`sticky top-0 z-50 border-t-2 border-primary bg-background transition-shadow ${stuck ? "shadow-card" : ""}`}>
       <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-4 py-3 lg:py-4">
         <Link to="/" className="flex items-center gap-3" aria-label={`${company.name} home`}>
-        <header className="h-20 md:h-28 flex items-center...">
+        <img
+  src={`${import.meta.env.BASE_URL}logo.png`}
+  alt="SURGICISS"
+  className="h-[56px] md:h-[72px] w-auto object-contain"
+  width="300"
+  height="72"
+/>
           <span className="leading-tight">
             <span className="block text-lg font-bold tracking-tight text-secondary">SURGICISS</span>
             <span className="block text-[0.6rem] font-medium uppercase tracking-[0.22em] text-muted-foreground">Sterile Instrument Systems</span>

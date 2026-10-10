@@ -1,6 +1,5 @@
 # Surgiciss Digital Twin (22)
-
-MASTER PROMPT — SURGICISS LTD WEBSITE RECONSTRUCTION
+SURGICISS LTD WEBSITE RECONSTRUCTION
 
 Act as a senior full-stack PHP developer, website reconstruction specialist, UI/UX designer, frontend engineer, backend engineer, database architect, SEO specialist, cybersecurity engineer and deployment specialist.
 

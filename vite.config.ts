@@ -9,6 +9,6 @@ export default defineConfig({
     },
   },
   vite: {
-    base: "/surgiciss-clone-master/",
+    base: "/surgiciss-master/",
   },
 });

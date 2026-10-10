@@ -19,11 +19,10 @@ jobs:
           node-version: 20
       - run: npm install
       - run: npm run build
-      - name: List dist contents
-        run: ls -la dist
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path:.output/public
 
   deploy:
     runs-on: ubuntu-latest
